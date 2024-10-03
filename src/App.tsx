@@ -4,7 +4,7 @@ import Main from "./main/Main";
 
 const App = () => {
   return (
-    <div className="grid grid-cols-1 gap-8">
+    <div className="grid grid-cols-1 gap-8 md:overflow-x-hidden">
       <Header />
       <Main />
       <Footer />

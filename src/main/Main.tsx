@@ -4,7 +4,7 @@ import Image from "./Image";
 
 const Main = () => {
   return (
-    <div className="mx-4 sm:mx-10 md:mx-20 lg:mx-32 xl:mx-52">
+    <div className="mx-4 sm:mx-10 md:mx-20 md:overflow-x-hidden lg:mx-32 xl:mx-52">
       {" "}
       {/* Ajout de marges responsives */}
       <Image imageName="Carte du monde" />
