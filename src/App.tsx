@@ -1,11 +1,15 @@
-function App() {
+import Footer from "./footer/Footer";
+import { Header } from "./hearder/Header";
+import Main from "./main/Main";
+
+const App = () => {
   return (
-    <>
-      <h1 className="m-auto max-w-lg bg-zinc-500/50 p-4 text-3xl font-bold text-red-500 underline">
-        Hello world!
-      </h1>
-    </>
+    <div className="grid grid-cols-1 gap-8">
+      <Header />
+      <Main />
+      <Footer />
+    </div>
   );
-}
+};
 
 export default App;
