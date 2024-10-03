@@ -6,20 +6,21 @@ interface NavBarComponent {
   card: string;
   contact: string;
 }
+
 const NavBar: React.FC<NavBarComponent> = ({ home, about, card, contact }) => {
   return (
-    <div>
-      <ul className="flex justify-center bg-amber-950 p-4 text-lg uppercase text-amber-200">
-        <li className="px-10 hover:underline">
+    <div className="overflow-x-auto md:overflow-visible">
+      <ul className="flex min-w-[400px] justify-start gap-6 bg-amber-950 p-4 text-lg uppercase text-amber-200 md:justify-center md:gap-10">
+        <li className="whitespace-nowrap hover:underline">
           <a href="#">{home}</a>
         </li>
-        <li className="px-10 hover:underline">
+        <li className="whitespace-nowrap hover:underline">
           <a href="#">{about}</a>
         </li>
-        <li className="px-10 hover:underline">
+        <li className="whitespace-nowrap hover:underline">
           <a href="#">{card}</a>
         </li>
-        <li className="px-10 hover:underline">
+        <li className="whitespace-nowrap hover:underline">
           <a href="#">{contact}</a>
         </li>
       </ul>
