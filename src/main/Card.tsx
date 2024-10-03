@@ -1,5 +1,3 @@
-// src/components/Card.tsx
-
 import { countries } from "../data/CountryList";
 
 const Card: React.FC = () => {
