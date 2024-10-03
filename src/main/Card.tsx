@@ -2,7 +2,7 @@ import { countries } from "../data/CountryList";
 
 const Card: React.FC = () => {
   return (
-    <div className="my-10 grid grid-cols-3 gap-10">
+    <div className="my-10  grid grid-cols-3 gap-10">
       {countries.map((pays, index) => (
         <div
           key={index}
