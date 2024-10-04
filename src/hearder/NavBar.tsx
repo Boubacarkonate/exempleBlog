@@ -9,7 +9,7 @@ interface NavBarComponent {
 
 const NavBar: React.FC<NavBarComponent> = ({ home, about, card, contact }) => {
   return (
-    <ul className="flex min-w-[400px] justify-start gap-6 bg-amber-950 p-4 text-lg uppercase text-amber-200 md:justify-center md:gap-10 md:overflow-x-hidden">
+    <ul className="flex min-w-full flex-wrap justify-center gap-2 bg-amber-950 p-4 text-lg uppercase text-amber-200 md:min-w-[400px] md:justify-center md:gap-10">
       <li className="whitespace-nowrap hover:underline">
         <a href="#">{home}</a>
       </li>
