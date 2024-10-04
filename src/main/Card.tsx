@@ -60,7 +60,7 @@ const Card: React.FC = () => {
               {country.region}
             </p>
             <p className="text-center leading-tight">
-              Population: {country.population.toLocaleString()}{" "}
+              Population: {country.population.toLocaleString()}
             </p>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
