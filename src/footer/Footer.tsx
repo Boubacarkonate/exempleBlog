@@ -3,10 +3,10 @@ const Footer = () => {
     <div>
       <footer className="footer footer-center rounded bg-amber-950 p-10 text-lg uppercase text-amber-200">
         <nav className="grid grid-flow-col gap-4">
-          <a className="link-hover link">About us</a>
+          <a className="link-hover link">About</a>
           <a className="link-hover link">Contact</a>
           <a className="link-hover link">Jobs</a>
-          <a className="link-hover link">Press kit</a>
+          <a className="link-hover link">Press</a>
         </nav>
         <nav>
           <div className="grid grid-flow-col gap-4">
