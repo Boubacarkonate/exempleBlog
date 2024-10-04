@@ -18,7 +18,7 @@ Cette application est construite avec les technologies modernes suivantes :
 - Conception avec **Tailwind CSS** pour une mise en page rapide et facile, et respect des meilleures pratiques grâce à `eslint-plugin-tailwindcss`.
 - Formatage cohérent du code avec **Prettier**.
 - Analyse du code et linting avec **ESLint** pour assurer la qualité et la propreté du code.
-- Appel de l'[API REST Countries](https://restcountries.com/v3.1/all).
+- Appel de l'[API REST Countries](https://restcountries.com/v3.1/all) **useEffect()** et la gestion des états avec **useState()**.
 
 ## Prérequis
 
