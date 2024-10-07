@@ -41,16 +41,16 @@ const Card: React.FC = () => {
   if (error) return <p>Erreur: {error}</p>;
 
   return (
-    <div className="container mx-auto my-10 px-4">
+    <div className="container mx-auto my-10 px-4 ">
       <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {data.map((country) => (
           <div
             key={country.cca3}
-            className="flex flex-col gap-4 rounded-lg border border-zinc-400 bg-zinc-100 p-4 shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-amber-200 hover:text-amber-950 hover:ring hover:ring-amber-950 hover:ring-offset-1"
+            className="flex flex-col gap-4 rounded-lg border border-amber-50 bg-amber-50 p-4 shadow-xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-amber-200 hover:text-amber-950 hover:ring hover:ring-amber-950 hover:ring-offset-1"
           >
             <img
               src={country.flags.png}
-              alt={`${country.name.common} flag`}
+              alt={`Drapeau de ${country.name.common}`}
               className="mb-2 h-32 w-full rounded-t-lg object-cover"
             />
             <h3 className="text-center text-lg font-bold">
@@ -63,10 +63,8 @@ const Card: React.FC = () => {
               Population: {country.population.toLocaleString()}
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-              officiis doloribus obcaecati dicta adipisci omnis labore ipsum
-              aspernatur consectetur molestiae, nostrum voluptatibus sit vitae!
-              Quidem quo atque nostrum. Recusandae, nulla!
+              <strong>Fait intéressant:</strong> Découvrez les merveilles de{" "}
+              {country.name.common} lors de votre prochain voyage!
             </p>
           </div>
         ))}
