@@ -41,30 +41,33 @@ const Card: React.FC = () => {
   if (error) return <p>Erreur: {error}</p>;
 
   return (
-    <div className="container mx-auto my-10 px-4 ">
+    <div className="container mx-auto my-10 px-4">
       <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {data.map((country) => (
           <div
             key={country.cca3}
-            className="flex flex-col gap-4 rounded-lg border border-amber-50 bg-amber-50 p-4 shadow-xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-amber-200 hover:text-amber-950 hover:ring hover:ring-amber-950 hover:ring-offset-1"
+            className="flex flex-col gap-4 rounded-lg border border-amber-200 bg-amber-50 p-4 shadow-xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-amber-100 hover:text-amber-950 hover:ring hover:ring-amber-950 hover:ring-offset-1"
           >
             <img
               src={country.flags.png}
               alt={`Drapeau de ${country.name.common}`}
               className="mb-2 h-32 w-full rounded-t-lg object-cover"
             />
-            <h3 className="text-center text-lg font-bold">
+            <h3 className="text-center text-lg font-bold text-amber-950">
               {country.name.common}
             </h3>
-            <p className="text-center text-lg text-gray-700">
+            <p className="text-center text-lg text-amber-950">
               {country.region}
             </p>
-            <p className="text-center leading-tight">
-              Population: {country.population.toLocaleString()}
+            <p className="text-center leading-tight text-amber-950">
+              Population : {country.population.toLocaleString()}
             </p>
             <p>
-              <strong>Fait intéressant:</strong> Découvrez les merveilles de{" "}
-              {country.name.common} lors de votre prochain voyage!
+              <strong className="text-amber-950">Fait intéressant : </strong>
+              <span className="text-amber-950">
+                Découvrez les merveilles de {country.name.common} lors de votre
+                prochain voyage!
+              </span>
             </p>
           </div>
         ))}
