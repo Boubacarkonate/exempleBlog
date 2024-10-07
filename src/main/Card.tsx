@@ -46,7 +46,7 @@ const Card: React.FC = () => {
         {data.map((country) => (
           <div
             key={country.cca3}
-            className="flex flex-col gap-4 rounded-lg border border-amber-200 bg-amber-50 p-4 shadow-xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-amber-100 hover:text-amber-950 hover:ring hover:ring-amber-950 hover:ring-offset-1"
+            className="flex flex-col gap-4 rounded-lg border border-amber-100 bg-amber-50 p-4 shadow-xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-amber-100 hover:text-amber-950 hover:ring hover:ring-amber-950 hover:ring-offset-1"
           >
             <img
               src={country.flags.png}
