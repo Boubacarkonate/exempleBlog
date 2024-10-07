@@ -45,16 +45,16 @@ const Card: React.FC = () => {
   if (error) return <p>Erreur: {error}</p>;
 
   return (
-    <div className="container mx-auto my-10 px-4">
+    <div>
       <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
         {data.map((country) => (
           <div
-            className="group mx-auto flex w-full max-w-xs flex-col gap-4 rounded-lg bg-amber-50 p-4 [perspective:1000] sm:w-72 sm:max-w-none"
+            className="group mx-auto flex w-full max-w-xs flex-col gap-4 bg-amber-50 p-4 [perspective:1000] sm:w-72 sm:max-w-none"
             key={country.cca3}
           >
-            <div className="relative h-64 w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] sm:h-80">
+            <div className="relative h-64 w-full shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] sm:h-80">
               {/* Recto - Flag Side */}
-              <div className="absolute inset-0 flex items-center justify-center border border-amber-200 bg-amber-50">
+              <div className="absolute inset-0 flex items-center justify-center rounded-lg border border-amber-200 bg-amber-50">
                 <img
                   src={country.flags.png}
                   alt={`Drapeau de ${country.name.common}`}
@@ -63,7 +63,7 @@ const Card: React.FC = () => {
               </div>
 
               {/* Verso - Country Info */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center rounded-xl bg-amber-200 px-6 py-8 text-center text-lg text-slate-200 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+              <div className="absolute inset-0 flex flex-col items-center justify-center rounded-lg bg-amber-200 px-6 py-8 text-center text-lg text-slate-200 [backface-visibility:hidden] [transform:rotateY(180deg)]">
                 <h3 className="mb-2 text-lg font-bold text-amber-950">
                   {country.name.common}
                 </h3>
