@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../assets/map3.png";
+import image from "../assets/map.png";
 
 type ImageProps = {
   imageName: string;
