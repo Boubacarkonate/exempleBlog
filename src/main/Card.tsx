@@ -45,7 +45,7 @@ const Card: React.FC = () => {
   if (error) return <p>Erreur: {error}</p>;
 
   return (
-    <div>
+    <div id="card">
       <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
         {data.map((country) => (
           <div

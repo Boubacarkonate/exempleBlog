@@ -6,7 +6,10 @@ type AboutProps = {
 
 const About: React.FC<AboutProps> = ({ text }) => {
   return (
-    <div className="text-balance text-justify text-lg text-amber-950">
+    <div
+      id="about"
+      className="text-balance text-justify text-lg text-amber-950"
+    >
       <p>{text}</p>
     </div>
   );
