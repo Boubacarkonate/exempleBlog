@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { FaArrowUp } from "react-icons/fa"; // Assurez-vous d'installer react-icons si ce n'est pas déjà fait.
+import { FaArrowUp } from "react-icons/fa";
 
 const ScrollToTopButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  // Fonction pour basculer la visibilité du bouton
   const toggleVisibility = () => {
     if (window.pageYOffset > 300) {
-      // Ajustez la valeur selon vos besoins
       setIsVisible(true);
     } else {
       setIsVisible(false);
     }
   };
 
-  // Fonction pour faire défiler vers le haut
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -23,10 +20,8 @@ const ScrollToTopButton: React.FC = () => {
   };
 
   useEffect(() => {
-    // Ajoute un écouteur d'événements lors du défilement de la fenêtre
     window.addEventListener("scroll", toggleVisibility);
 
-    // Nettoyage de l'écouteur d'événements
     return () => {
       window.removeEventListener("scroll", toggleVisibility);
     };

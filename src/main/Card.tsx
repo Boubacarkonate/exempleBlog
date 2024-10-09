@@ -53,16 +53,14 @@ const Card: React.FC = () => {
             key={country.cca3}
           >
             <div className="relative h-64 w-full shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] sm:h-80">
-              {/* Recto - Flag Side */}
               <div className="absolute inset-0 flex items-center justify-center rounded-lg border border-amber-200 bg-amber-50">
                 <img
                   src={country.flags.png}
                   alt={`Drapeau de ${country.name.common}`}
-                  className="h-24 w-36 object-contain sm:h-36 sm:w-56" // Taille du drapeau responsive
+                  className="h-24 w-36 object-contain sm:h-36 sm:w-56"
                 />
               </div>
 
-              {/* Verso - Country Info */}
               <div className="absolute inset-0 flex flex-col items-center justify-center rounded-lg bg-amber-200 px-6 py-8 text-center text-lg text-slate-200 [backface-visibility:hidden] [transform:rotateY(180deg)]">
                 <h3 className="mb-2 text-lg font-bold text-amber-950">
                   {country.name.common}

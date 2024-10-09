@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div
       id="home"
-      className="grid grid-cols-1 gap-32 bg-amber-50 md:overflow-x-hidden"
+      className="grid grid-cols-1 gap-32 bg-amber-50 font-quicksand md:overflow-x-hidden"
     >
       <Header />
       <Main />

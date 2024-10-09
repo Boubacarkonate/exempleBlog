@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LogoNav from "./LogoNav";
 
 interface NavBarComponent {
@@ -9,8 +9,27 @@ interface NavBarComponent {
 }
 
 const NavBar: React.FC<NavBarComponent> = ({ home, about, card, contact }) => {
+  const [opacity, setOpacity] = useState<number>(1);
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    const newOpacity = Math.max(0.8, 1 - scrollTop / 300);
+    setOpacity(newOpacity);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="fixed inset-x-0 top-0 z-10 flex w-full flex-row">
+    <div
+      className="fixed inset-x-0 top-0 z-20 flex w-full flex-row transition-opacity duration-300"
+      style={{ opacity }}
+    >
       <div>
         <LogoNav logoName="logo" />
       </div>
