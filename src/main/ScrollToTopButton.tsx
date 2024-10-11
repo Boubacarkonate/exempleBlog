@@ -35,7 +35,7 @@ const ScrollToTopButton: React.FC = () => {
           aria-label="Retour en haut"
           className="rounded-full bg-amber-200 p-3 shadow-lg transition hover:bg-amber-300"
         >
-          <FaArrowUp className="text-2xl text-amber-950" />
+          <FaArrowUp className="animate-bounce text-2xl text-amber-950" />
         </button>
       )}
     </div>
