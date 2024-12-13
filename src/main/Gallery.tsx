@@ -2,11 +2,11 @@ import { useState } from "react";
 
 const Gallery = () => {
   // État pour l'image sélectionnée et l'ouverture de la modal
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   // Fonction pour ouvrir la modal
-  const openModal = (imageSrc) => {
+  const openModal = (imageSrc: string) => {
     setSelectedImage(imageSrc); // Définir l'image sélectionnée
     setIsModalOpen(true); // Ouvrir la modal
   };
@@ -130,7 +130,7 @@ const Gallery = () => {
           <div className="relative scale-100 transition-all duration-500 ease-out">
             {/* Image en grand */}
             <img
-              src={selectedImage}
+              src={selectedImage!}
               alt="Selected"
               className="max-h-screen max-w-full object-contain"
             />
