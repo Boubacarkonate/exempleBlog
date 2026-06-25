@@ -40,9 +40,9 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
-            <a href="/#about" className={linkClass} aria-label="À propos">
+            <Link to="/about" className={linkClass} aria-label="À propos">
               About
-            </a>
+            </Link>
           </li>
           <li>
             <a href="/#card" className={linkClass} aria-label="Destinations">
