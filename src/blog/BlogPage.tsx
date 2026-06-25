@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { blogPosts, type BlogPost } from "../data/blogPosts";
 import PageTransition from "../components/PageTransition";
+import SEO from "../components/SEO";
 
 const BlogCard = ({ post }: { post: BlogPost }) => (
   <article className="group overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-stone-800">
@@ -50,6 +51,11 @@ const BlogCard = ({ post }: { post: BlogPost }) => (
 const BlogPage = () => (
   <PageTransition>
   <main className="min-h-screen pb-0">
+    <SEO
+      title="Carnet de voyage"
+      description="Tous les articles du Travel Blog — récits de Santorin, Tokyo, les fjords de Norvège, Marrakech et bien d'autres destinations à découvrir."
+      url="/blog"
+    />
     <div className="bg-amber-950 pb-16 pt-28 text-center text-amber-50 dark:bg-stone-800">
       <p className="mb-2 text-sm uppercase tracking-widest text-amber-400">
         The Travel Blog

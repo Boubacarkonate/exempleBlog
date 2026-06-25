@@ -1,4 +1,5 @@
 import FadeInUp from "../components/FadeInUp";
+import SEO from "../components/SEO";
 import About from "./About";
 import Card from "./Card";
 import Gallery from "./Gallery";
@@ -7,6 +8,11 @@ import Image from "./Image";
 const Main = () => {
   return (
     <div className="mx-4 grid gap-16 sm:mx-10 md:mx-20 md:overflow-x-hidden lg:mx-32 xl:mx-52">
+      <SEO
+        title="Accueil"
+        description="Bienvenue sur The Travel Blog — récits de voyage inspirants, galerie photo et découvertes du monde entier. Explorez les destinations avec moi."
+        url="/"
+      />
       <Image imageName="Carte du monde" />
 
       <FadeInUp>

@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 import { blogPosts, type ContentBlock } from "../data/blogPosts";
 import PageTransition from "../components/PageTransition";
+import SEO from "../components/SEO";
 import ReadingProgress from "./ReadingProgress";
 
 const renderBlock = (block: ContentBlock, index: number) => {
@@ -58,6 +59,13 @@ const BlogPostPage = () => {
   return (
     <PageTransition>
     <article className="min-h-screen pb-0">
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        image={post.coverImage}
+        type="article"
+        url={`/blog/${post.slug}`}
+      />
       <ReadingProgress />
       {/* Cover */}
       <div className="relative h-80 overflow-hidden md:h-[30rem]">

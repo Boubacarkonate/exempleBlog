@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import { FiCompass } from "react-icons/fi";
+import SEO from "../components/SEO";
 
 const NotFound = () => (
   <main className="flex min-h-screen flex-col items-center justify-center px-6 pb-0 pt-24 text-center">
+    <SEO
+      title="Page introuvable"
+      description="Cette page n'existe pas sur The Travel Blog. Revenez à l'accueil ou explorez le carnet de voyage."
+    />
     <div className="mb-6 animate-spin-slow text-amber-300 dark:text-amber-500">
       <FiCompass size={80} strokeWidth={1} />
     </div>
