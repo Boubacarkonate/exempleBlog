@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "photos": "Photos",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "label": "The Travel Blog",
+    "title_1": "Explorez le monde",
+    "title_2": "avec moi",
+    "subtitle": "Récits authentiques, destinations iconiques et photographies de voyage pour vous inspirer à partir.",
+    "cta_blog": "Lire le blog",
+    "cta_discover": "Découvrir"
+  },
+  "home": {
+    "about_label": "À propos",
+    "about_title": "Le voyage comme art de vivre",
+    "about_subtitle": "Passionné par l'exploration, je documente chaque aventure pour partager l'essentiel — la curiosité, la rencontre, l'émerveillement.",
+    "about_text": "Depuis les fjords de Norvège aux ruelles de Marrakech, en passant par les temples de Tokyo et les falaises de Santorin, The Travel Blog est né d'une conviction simple : chaque voyage transforme. Ici, pas de guides touristiques génériques — seulement des récits authentiques, des photos honnêtes et des conseils pratiques issus du terrain. Rejoignez-moi dans cette aventure et laissez-vous inspirer à sortir des sentiers battus.",
+    "dest_label": "Destinations",
+    "dest_title": "Nos destinations",
+    "dest_subtitle": "Quelques pays qui m'ont marqué — survolez les cartes pour en savoir plus.",
+    "blog_label": "Blog",
+    "blog_title": "Derniers articles",
+    "blog_subtitle": "Les récits les plus récents du carnet de voyage.",
+    "blog_all": "Tous les articles →",
+    "gallery_label": "Galerie",
+    "gallery_title": "La galerie",
+    "gallery_subtitle": "Filtrez par catégorie et cliquez sur une photo pour l'agrandir."
+  },
+  "stats": {
+    "countries": "Pays explorés",
+    "articles": "Articles publiés",
+    "photos": "Photos partagées"
+  },
+  "gallery": {
+    "all": "Tous",
+    "beaches": "Plages",
+    "cities": "Villes",
+    "nature": "Nature",
+    "culture": "Culture",
+    "empty": "Aucune photo dans cette catégorie.",
+    "close": "Fermer",
+    "prev": "Image précédente",
+    "next": "Image suivante"
+  },
+  "next_dest": {
+    "label": "Prochaine destination",
+    "teaser": "Une nouvelle aventure se prépare…",
+    "soon": "Bientôt"
+  },
+  "blog": {
+    "label": "The Travel Blog",
+    "title": "Carnet de voyage",
+    "subtitle": "Récits, découvertes et inspirations du monde entier",
+    "search": "Rechercher un article, une destination…",
+    "all": "Tous",
+    "read": "Lire l'article",
+    "read_short": "Lire →",
+    "min_read": "min de lecture",
+    "min": "min",
+    "no_results": "Aucun article trouvé",
+    "no_results_hint": "Essayez une autre recherche ou",
+    "clear": "effacez les filtres",
+    "clear_short": "effacer les filtres",
+    "article": "article",
+    "articles": "articles",
+    "grid": "Vue grille",
+    "list": "Vue liste"
+  },
+  "post": {
+    "back": "Retour au blog",
+    "not_found": "Article introuvable",
+    "toc": "Sommaire",
+    "share": "Partager cet article",
+    "more": "Autres articles"
+  },
+  "about": {
+    "title": "À propos",
+    "subtitle": "Le voyageur derrière les récits",
+    "hello": "Bonjour",
+    "name": "Je suis Bouba",
+    "passion": "Passionné de voyage, de photographie et de rencontres.",
+    "bio1": "Depuis mon premier voyage en Grèce, j'ai compris que le monde était bien plus grand que ce que les livres pouvaient raconter. Chaque destination m'a appris quelque chose — sur les autres, sur moi-même, sur ce qui compte vraiment.",
+    "bio2": "The Travel Blog est né de cette conviction : partager l'essentiel pour vous donner envie de partir à votre tour. Pas de guides génériques, mais des récits honnêtes, des photos authentiques et des conseils tirés du terrain.",
+    "cta_blog": "Lire le blog",
+    "cta_contact": "Me contacter",
+    "countries_label": "Explorations",
+    "countries_title": "Pays visités",
+    "countries_subtitle": "6 pays, 4 continents, des souvenirs pour toute une vie.",
+    "map_visited": "Pays visités",
+    "map_not_visited": "Non visités",
+    "contact_label": "Contact",
+    "contact_title": "Me contacter",
+    "contact_subtitle": "Une question, une collaboration, un simple bonjour ? Écrivez-moi."
+  },
+  "contact": {
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "name_ph": "Jean Dupont",
+    "email_ph": "jean@exemple.fr",
+    "message_ph": "Votre message…",
+    "send": "Envoyer",
+    "sending": "Envoi en cours…",
+    "sent": "Envoyé !",
+    "error": "Erreur lors de l'envoi. Réessayez."
+  },
+  "share": {
+    "article": "Partager cet article",
+    "copy": "Copier le lien",
+    "copied": "Copié !"
+  },
+  "footer": {
+    "tagline": "Récits authentiques, destinations iconiques et photographies de voyage pour vous inspirer à partir.",
+    "home": "Accueil",
+    "blog": "Blog",
+    "about": "À propos",
+    "destinations": "Destinations",
+    "contact": "Contact",
+    "share": "Partager le blog",
+    "copy": "Copier le lien",
+    "copied": "Copié !",
+    "copyright": "© {{year}} The Travel Blog — Tous droits réservés"
+  },
+  "notfound": {
+    "error": "Erreur 404",
+    "title": "Destination introuvable",
+    "text": "Il semblerait que cette page n'existe pas sur notre carte. Peut-être avez-vous pris un mauvais tournant quelque part ?",
+    "home": "Retour à l'accueil",
+    "blog": "Voir le blog"
+  }
+}

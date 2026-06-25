@@ -1,14 +1,14 @@
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+import { useTranslation } from "react-i18next";
 import { useDarkMode } from "../hooks/useDarkMode";
 
-const GEO_URL =
-  "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
+const GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
-// ISO 3166-1 numérique des pays visités
 const VISITED = new Set(["300", "392", "578", "504", "380", "76"]);
 
 const WorldMap = () => {
   const { isDark } = useDarkMode();
+  const { t } = useTranslation();
 
   const defaultFill = isDark ? "#3c3431" : "#fef3c7";
   const visitedFill = "#d97706";
@@ -46,16 +46,14 @@ const WorldMap = () => {
           }
         </Geographies>
       </ComposableMap>
-
-      {/* Légende */}
       <div className="flex items-center justify-center gap-6 px-4 pb-4 text-xs text-amber-700 dark:text-amber-300">
         <span className="flex items-center gap-2">
           <span className="inline-block h-3 w-3 rounded-sm bg-amber-600" />
-          Pays visités
+          {t("about.map_visited")}
         </span>
         <span className="flex items-center gap-2">
           <span className="inline-block h-3 w-3 rounded-sm bg-amber-100 ring-1 ring-amber-300 dark:bg-stone-700 dark:ring-stone-600" />
-          Non visités
+          {t("about.map_not_visited")}
         </span>
       </div>
     </div>

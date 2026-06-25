@@ -1,5 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FiCheck, FiSend } from "react-icons/fi";
 
 type Status = "idle" | "sending" | "success" | "error";
@@ -7,6 +8,7 @@ type Status = "idle" | "sending" | "success" | "error";
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<Status>("idle");
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,43 +35,23 @@ const ContactForm = () => {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-400">
-            Nom
+            {t("contact.name")}
           </label>
-          <input
-            name="user_name"
-            type="text"
-            required
-            placeholder="Jean Dupont"
-            className={inputClass}
-          />
+          <input name="user_name" type="text" required placeholder={t("contact.name_ph")} className={inputClass} />
         </div>
         <div>
           <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-400">
-            Email
+            {t("contact.email")}
           </label>
-          <input
-            name="user_email"
-            type="email"
-            required
-            placeholder="jean@exemple.fr"
-            className={inputClass}
-          />
+          <input name="user_email" type="email" required placeholder={t("contact.email_ph")} className={inputClass} />
         </div>
       </div>
-
       <div>
         <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-400">
-          Message
+          {t("contact.message")}
         </label>
-        <textarea
-          name="message"
-          rows={5}
-          required
-          placeholder="Votre message…"
-          className={`${inputClass} resize-none`}
-        />
+        <textarea name="message" rows={5} required placeholder={t("contact.message_ph")} className={`${inputClass} resize-none`} />
       </div>
-
       <div className="flex items-center gap-4">
         <button
           type="submit"
@@ -77,18 +59,15 @@ const ContactForm = () => {
           className="flex items-center gap-2 rounded-full bg-amber-950 px-6 py-3 text-sm font-semibold text-amber-50 transition-all hover:scale-105 hover:bg-amber-800 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-amber-400 dark:text-stone-900 dark:hover:bg-amber-300"
         >
           {status === "success" ? (
-            <><FiCheck size={15} /> Envoyé !</>
+            <><FiCheck size={15} /> {t("contact.sent")}</>
           ) : status === "sending" ? (
-            "Envoi en cours…"
+            t("contact.sending")
           ) : (
-            <><FiSend size={15} /> Envoyer</>
+            <><FiSend size={15} /> {t("contact.send")}</>
           )}
         </button>
-
         {status === "error" && (
-          <p className="text-sm text-red-500 dark:text-red-400">
-            Erreur lors de l'envoi. Réessayez.
-          </p>
+          <p className="text-sm text-red-500 dark:text-red-400">{t("contact.error")}</p>
         )}
       </div>
     </form>

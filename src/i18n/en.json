@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "photos": "Photos",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "label": "The Travel Blog",
+    "title_1": "Explore the world",
+    "title_2": "with me",
+    "subtitle": "Authentic stories, iconic destinations and travel photography to inspire you to leave.",
+    "cta_blog": "Read the blog",
+    "cta_discover": "Discover"
+  },
+  "home": {
+    "about_label": "About",
+    "about_title": "Travel as a way of life",
+    "about_subtitle": "Passionate about exploration, I document every adventure to share the essentials — curiosity, connection, wonder.",
+    "about_text": "From the fjords of Norway to the streets of Marrakech, through the temples of Tokyo and the cliffs of Santorini, The Travel Blog was born from a simple conviction: every journey transforms. No generic tourist guides here — only authentic stories, honest photos and practical advice from the field. Join me on this adventure and let yourself be inspired to go off the beaten track.",
+    "dest_label": "Destinations",
+    "dest_title": "Our destinations",
+    "dest_subtitle": "A few countries that have left their mark — hover over the cards to learn more.",
+    "blog_label": "Blog",
+    "blog_title": "Latest articles",
+    "blog_subtitle": "The most recent stories from the travel journal.",
+    "blog_all": "All articles →",
+    "gallery_label": "Gallery",
+    "gallery_title": "The gallery",
+    "gallery_subtitle": "Filter by category and click on a photo to enlarge it."
+  },
+  "stats": {
+    "countries": "Countries explored",
+    "articles": "Articles published",
+    "photos": "Photos shared"
+  },
+  "gallery": {
+    "all": "All",
+    "beaches": "Beaches",
+    "cities": "Cities",
+    "nature": "Nature",
+    "culture": "Culture",
+    "empty": "No photos in this category.",
+    "close": "Close",
+    "prev": "Previous image",
+    "next": "Next image"
+  },
+  "next_dest": {
+    "label": "Next destination",
+    "teaser": "A new adventure is being prepared…",
+    "soon": "Coming soon"
+  },
+  "blog": {
+    "label": "The Travel Blog",
+    "title": "Travel journal",
+    "subtitle": "Stories, discoveries and inspirations from around the world",
+    "search": "Search an article, a destination…",
+    "all": "All",
+    "read": "Read article",
+    "read_short": "Read →",
+    "min_read": "min read",
+    "min": "min",
+    "no_results": "No articles found",
+    "no_results_hint": "Try a different search or",
+    "clear": "clear filters",
+    "clear_short": "clear filters",
+    "article": "article",
+    "articles": "articles",
+    "grid": "Grid view",
+    "list": "List view"
+  },
+  "post": {
+    "back": "Back to blog",
+    "not_found": "Article not found",
+    "toc": "Table of contents",
+    "share": "Share this article",
+    "more": "More articles"
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "The traveler behind the stories",
+    "hello": "Hello",
+    "name": "I'm Bouba",
+    "passion": "Passionate about travel, photography and encounters.",
+    "bio1": "Since my first trip to Greece, I understood that the world was much bigger than what books could tell. Each destination taught me something — about others, about myself, about what really matters.",
+    "bio2": "The Travel Blog was born from this conviction: sharing the essentials to inspire you to travel in turn. No generic guides, but honest stories, authentic photos and tips from the field.",
+    "cta_blog": "Read the blog",
+    "cta_contact": "Contact me",
+    "countries_label": "Explorations",
+    "countries_title": "Countries visited",
+    "countries_subtitle": "6 countries, 4 continents, memories for a lifetime.",
+    "map_visited": "Countries visited",
+    "map_not_visited": "Not visited",
+    "contact_label": "Contact",
+    "contact_title": "Contact me",
+    "contact_subtitle": "A question, a collaboration, a simple hello? Write to me."
+  },
+  "contact": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "name_ph": "John Smith",
+    "email_ph": "john@example.com",
+    "message_ph": "Your message…",
+    "send": "Send",
+    "sending": "Sending…",
+    "sent": "Sent!",
+    "error": "Error while sending. Please try again."
+  },
+  "share": {
+    "article": "Share this article",
+    "copy": "Copy link",
+    "copied": "Copied!"
+  },
+  "footer": {
+    "tagline": "Authentic stories, iconic destinations and travel photography to inspire you to leave.",
+    "home": "Home",
+    "blog": "Blog",
+    "about": "About",
+    "destinations": "Destinations",
+    "contact": "Contact",
+    "share": "Share the blog",
+    "copy": "Copy link",
+    "copied": "Copied!",
+    "copyright": "© {{year}} The Travel Blog — All rights reserved"
+  },
+  "notfound": {
+    "error": "Error 404",
+    "title": "Destination not found",
+    "text": "It seems this page doesn't exist on our map. Perhaps you took a wrong turn somewhere?",
+    "home": "Back to home",
+    "blog": "See the blog"
+  }
+}

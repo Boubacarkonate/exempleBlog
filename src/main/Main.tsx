@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import FadeInUp from "../components/FadeInUp";
 import SEO from "../components/SEO";
@@ -9,94 +10,86 @@ import Gallery from "./Gallery";
 import Hero from "./Hero";
 import NextDestination from "./NextDestination";
 
-const Main = () => (
-  <div>
-    <SEO
-      title="Accueil"
-      description="Bienvenue sur The Travel Blog — récits de voyage inspirants, galerie photo et découvertes du monde entier. Explorez les destinations avec moi."
-      url="/"
-    />
+const Main = () => {
+  const { t } = useTranslation();
 
-    <Hero />
+  return (
+    <div>
+      <SEO
+        title="Accueil"
+        description="Bienvenue sur The Travel Blog — récits de voyage inspirants, galerie photo et découvertes du monde entier."
+        url="/"
+      />
 
-    <div className="mx-4 mt-16 grid gap-24 pb-8 sm:mx-10 md:mx-20 lg:mx-32 xl:mx-52">
+      <Hero />
 
-      {/* À propos */}
-      <FadeInUp>
-        <section id="about" className="scroll-mt-24">
-          <SectionTitle
-            label="À propos"
-            title="Le voyage comme art de vivre"
-            subtitle="Passionné par l'exploration, je documente chaque aventure pour partager l'essentiel — la curiosité, la rencontre, l'émerveillement."
-          />
-          <p className="max-w-3xl text-justify text-lg leading-relaxed text-amber-900 dark:text-amber-200">
-            Depuis les fjords de Norvège aux ruelles de Marrakech, en passant
-            par les temples de Tokyo et les falaises de Santorin, The Travel
-            Blog est né d'une conviction simple : chaque voyage transforme.
-            Ici, pas de guides touristiques génériques — seulement des récits
-            authentiques, des photos honnêtes et des conseils pratiques issus
-            du terrain. Rejoignez-moi dans cette aventure et laissez-vous
-            inspirer à sortir des sentiers battus.
-          </p>
-        </section>
-      </FadeInUp>
+      <div className="mx-4 mt-16 grid gap-24 pb-8 sm:mx-10 md:mx-20 lg:mx-32 xl:mx-52">
 
-      {/* Destinations */}
-      <FadeInUp delay={0.05}>
-        <section id="card" className="scroll-mt-24">
-          <SectionTitle
-            label="Destinations"
-            title="Nos destinations"
-            subtitle="Quelques pays qui m'ont marqué — survolez les cartes pour en savoir plus."
-          />
-          <Card />
-        </section>
-      </FadeInUp>
-
-      {/* Stats */}
-      <FadeInUp delay={0.05}>
-        <StatsSection />
-      </FadeInUp>
-
-      {/* Derniers articles */}
-      <FadeInUp delay={0.05}>
-        <section>
-          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <FadeInUp>
+          <section id="about" className="scroll-mt-24">
             <SectionTitle
-              label="Blog"
-              title="Derniers articles"
-              subtitle="Les récits les plus récents du carnet de voyage."
+              label={t("home.about_label")}
+              title={t("home.about_title")}
+              subtitle={t("home.about_subtitle")}
             />
-            <Link
-              to="/blog"
-              className="mb-10 shrink-0 rounded-full border border-amber-950 px-5 py-2 text-sm font-semibold text-amber-950 transition-all hover:scale-105 hover:bg-amber-950 hover:text-amber-50 dark:border-amber-300 dark:text-amber-100 dark:hover:bg-amber-300 dark:hover:text-stone-900"
-            >
-              Tous les articles →
-            </Link>
-          </div>
-          <BlogPreview />
-        </section>
-      </FadeInUp>
+            <p className="max-w-3xl text-justify text-lg leading-relaxed text-amber-900 dark:text-amber-200">
+              {t("home.about_text")}
+            </p>
+          </section>
+        </FadeInUp>
 
-      {/* Galerie */}
-      <FadeInUp delay={0.05}>
-        <section>
-          <SectionTitle
-            label="Galerie"
-            title="La galerie"
-            subtitle="Filtrez par catégorie et cliquez sur une photo pour l'agrandir."
-          />
-          <Gallery />
-        </section>
-      </FadeInUp>
+        <FadeInUp delay={0.05}>
+          <section id="card" className="scroll-mt-24">
+            <SectionTitle
+              label={t("home.dest_label")}
+              title={t("home.dest_title")}
+              subtitle={t("home.dest_subtitle")}
+            />
+            <Card />
+          </section>
+        </FadeInUp>
 
-      {/* Prochaine destination */}
-      <FadeInUp delay={0.05}>
-        <NextDestination />
-      </FadeInUp>
+        <FadeInUp delay={0.05}>
+          <StatsSection />
+        </FadeInUp>
 
+        <FadeInUp delay={0.05}>
+          <section>
+            <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+              <SectionTitle
+                label={t("home.blog_label")}
+                title={t("home.blog_title")}
+                subtitle={t("home.blog_subtitle")}
+              />
+              <Link
+                to="/blog"
+                className="mb-10 shrink-0 rounded-full border border-amber-950 px-5 py-2 text-sm font-semibold text-amber-950 transition-all hover:scale-105 hover:bg-amber-950 hover:text-amber-50 dark:border-amber-300 dark:text-amber-100 dark:hover:bg-amber-300 dark:hover:text-stone-900"
+              >
+                {t("home.blog_all")}
+              </Link>
+            </div>
+            <BlogPreview />
+          </section>
+        </FadeInUp>
+
+        <FadeInUp delay={0.05}>
+          <section>
+            <SectionTitle
+              label={t("home.gallery_label")}
+              title={t("home.gallery_title")}
+              subtitle={t("home.gallery_subtitle")}
+            />
+            <Gallery />
+          </section>
+        </FadeInUp>
+
+        <FadeInUp delay={0.05}>
+          <NextDestination />
+        </FadeInUp>
+
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Main;
