@@ -1,20 +1,25 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import mapImage from "../assets/map.png";
 
 const Hero = () => {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 600], [0, 180]);
+  const [offsetY, setOffsetY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setOffsetY(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section className="relative -mt-32 flex min-h-screen items-center justify-center overflow-hidden">
       {/* Image de fond avec parallax */}
-      <motion.img
+      <img
         src={mapImage}
         alt="Carte du monde"
-        style={{ y }}
-        className="absolute inset-x-0 -top-12 h-[calc(100%+80px)] w-full object-cover"
+        style={{ transform: `translateY(${offsetY * 0.4}px)` }}
+        className="absolute inset-x-0 -top-16 h-[calc(100%+120px)] w-full object-cover"
       />
 
       {/* Overlay gradient */}
