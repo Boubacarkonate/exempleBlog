@@ -21,8 +21,8 @@ const WorldMap = () => {
         style={{ width: "100%", height: "auto" }}
       >
         <Geographies geography={GEO_URL}>
-          {({ geographies }) =>
-            geographies.map((geo) => {
+          {({ geographies }: { geographies: any[] }) =>
+            geographies.map((geo: any) => {
               const visited = VISITED.has(String(geo.id));
               return (
                 <Geography
