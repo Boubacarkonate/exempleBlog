@@ -1,5 +1,6 @@
 import FadeInUp from "../components/FadeInUp";
 import SEO from "../components/SEO";
+import StatsSection from "../components/StatsSection";
 import About from "./About";
 import Card from "./Card";
 import Gallery from "./Gallery";
@@ -21,6 +22,10 @@ const Main = () => {
 
       <FadeInUp delay={0.1}>
         <Card />
+      </FadeInUp>
+
+      <FadeInUp delay={0.05}>
+        <StatsSection />
       </FadeInUp>
 
       <FadeInUp delay={0.05}>
