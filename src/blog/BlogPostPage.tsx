@@ -1,6 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 import { blogPosts, type ContentBlock } from "../data/blogPosts";
+import PageTransition from "../components/PageTransition";
+import ReadingProgress from "./ReadingProgress";
 
 const renderBlock = (block: ContentBlock, index: number) => {
   switch (block.type) {
@@ -54,7 +56,9 @@ const BlogPostPage = () => {
   const otherPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
 
   return (
+    <PageTransition>
     <article className="min-h-screen pb-0">
+      <ReadingProgress />
       {/* Cover */}
       <div className="relative h-80 overflow-hidden md:h-[30rem]">
         <img
@@ -130,6 +134,7 @@ const BlogPostPage = () => {
         )}
       </div>
     </article>
+    </PageTransition>
   );
 };
 
