@@ -3,6 +3,7 @@ import { FiArrowLeft } from "react-icons/fi";
 import { blogPosts, type ContentBlock } from "../data/blogPosts";
 import PageTransition from "../components/PageTransition";
 import SEO from "../components/SEO";
+import ShareButtons from "../components/ShareButtons";
 import ReadingProgress from "./ReadingProgress";
 
 const slugify = (text: string) =>
@@ -130,6 +131,8 @@ const BlogPostPage = () => {
               <div className="mt-6 text-base">
                 {post.content.map((block, i) => renderBlock(block, i))}
               </div>
+
+              <ShareButtons title={post.title} slug={post.slug} />
 
               {/* Autres articles */}
               {otherPosts.length > 0 && (
