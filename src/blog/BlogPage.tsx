@@ -164,7 +164,7 @@ const BlogPage = () => {
                 Essayez une autre recherche ou{" "}
                 <button
                   onClick={clearFilters}
-                  className="underline hover:text-amber-950 dark:hover:text-amber-100"
+                  className="text-teal-600 underline hover:text-teal-800 dark:text-teal-400 dark:hover:text-teal-200"
                 >
                   effacez les filtres
                 </button>

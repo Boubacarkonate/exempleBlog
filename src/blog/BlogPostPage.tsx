@@ -64,7 +64,7 @@ const BlogPostPage = () => {
         <h1 className="text-2xl font-bold">Article introuvable</h1>
         <Link
           to="/blog"
-          className="text-amber-600 hover:underline dark:text-amber-400"
+          className="text-teal-600 hover:underline dark:text-teal-400"
         >
           ← Retour au blog
         </Link>
@@ -122,7 +122,7 @@ const BlogPostPage = () => {
             <div className="min-w-0 flex-1">
               <Link
                 to="/blog"
-                className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-amber-600 transition-colors hover:text-amber-950 dark:text-amber-400 dark:hover:text-amber-100"
+                className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-teal-600 transition-colors hover:text-teal-800 dark:text-teal-400 dark:hover:text-teal-200"
               >
                 <FiArrowLeft />
                 Retour au blog
@@ -182,7 +182,7 @@ const BlogPostPage = () => {
                       <a
                         key={h.text}
                         href={`#${slugify(h.text)}`}
-                        className="block text-sm leading-snug text-amber-800 transition-colors hover:text-amber-950 dark:text-amber-300 dark:hover:text-amber-100"
+                        className="block text-sm leading-snug text-teal-700 transition-colors hover:text-teal-900 dark:text-teal-400 dark:hover:text-teal-200"
                       >
                         {h.text}
                       </a>
