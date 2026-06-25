@@ -8,7 +8,7 @@ const renderBlock = (block: ContentBlock, index: number) => {
       return (
         <h2
           key={index}
-          className="mb-3 mt-10 text-2xl font-bold text-amber-950"
+          className="mb-3 mt-10 text-2xl font-bold text-amber-950 dark:text-amber-100"
         >
           {block.text}
         </h2>
@@ -17,11 +17,11 @@ const renderBlock = (block: ContentBlock, index: number) => {
       return (
         <blockquote
           key={index}
-          className="my-8 border-l-4 border-amber-400 bg-amber-100/50 py-4 pl-6 pr-4 italic"
+          className="my-8 border-l-4 border-amber-400 bg-amber-100/50 py-4 pl-6 pr-4 italic dark:border-amber-500 dark:bg-stone-700/40"
         >
-          <p className="text-lg text-amber-900">"{block.text}"</p>
+          <p className="text-lg text-amber-900 dark:text-amber-200">"{block.text}"</p>
           {block.author && (
-            <cite className="mt-2 block text-sm not-italic text-amber-600">
+            <cite className="mt-2 block text-sm not-italic text-amber-600 dark:text-amber-400">
               — {block.author}
             </cite>
           )}
@@ -29,7 +29,7 @@ const renderBlock = (block: ContentBlock, index: number) => {
       );
     default:
       return (
-        <p key={index} className="mb-5 leading-relaxed text-amber-900/80">
+        <p key={index} className="mb-5 leading-relaxed text-amber-900/80 dark:text-amber-200/80">
           {block.text}
         </p>
       );
@@ -42,9 +42,9 @@ const BlogPostPage = () => {
 
   if (!post) {
     return (
-      <div className="flex min-h-screen flex-col items-center justify-center gap-4 pt-24 text-amber-950">
+      <div className="flex min-h-screen flex-col items-center justify-center gap-4 pt-24 text-amber-950 dark:text-amber-100">
         <h1 className="text-2xl font-bold">Article introuvable</h1>
-        <Link to="/blog" className="text-amber-600 hover:underline">
+        <Link to="/blog" className="text-amber-600 hover:underline dark:text-amber-400">
           ← Retour au blog
         </Link>
       </div>
@@ -87,7 +87,7 @@ const BlogPostPage = () => {
       <div className="mx-auto max-w-3xl px-6 py-12">
         <Link
           to="/blog"
-          className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-amber-600 transition-colors hover:text-amber-950"
+          className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-amber-600 transition-colors hover:text-amber-950 dark:text-amber-400 dark:hover:text-amber-100"
         >
           <FiArrowLeft />
           Retour au blog
@@ -99,8 +99,8 @@ const BlogPostPage = () => {
 
         {/* Other articles */}
         {otherPosts.length > 0 && (
-          <div className="mt-16 border-t border-amber-200 pt-10">
-            <h3 className="mb-6 text-lg font-bold uppercase tracking-wide text-amber-950">
+          <div className="mt-16 border-t border-amber-200 pt-10 dark:border-stone-700">
+            <h3 className="mb-6 text-lg font-bold uppercase tracking-wide text-amber-950 dark:text-amber-100">
               Autres articles
             </h3>
             <div className="grid gap-5 sm:grid-cols-2">
@@ -117,11 +117,11 @@ const BlogPostPage = () => {
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
-                  <div className="bg-white p-4">
-                    <p className="text-sm font-semibold text-amber-950 transition-colors group-hover:text-amber-700">
+                  <div className="bg-white p-4 dark:bg-stone-800">
+                    <p className="text-sm font-semibold text-amber-950 transition-colors group-hover:text-amber-700 dark:text-amber-100 dark:group-hover:text-amber-300">
                       {p.title}
                     </p>
-                    <p className="mt-1 text-xs text-amber-500">{p.date}</p>
+                    <p className="mt-1 text-xs text-amber-500 dark:text-amber-400">{p.date}</p>
                   </div>
                 </Link>
               ))}

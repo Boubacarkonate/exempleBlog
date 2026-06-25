@@ -8,7 +8,7 @@ const About: React.FC<AboutProps> = ({ text }) => {
   return (
     <div
       id="about"
-      className="text-balance text-justify text-lg text-amber-950"
+      className="text-balance text-justify text-lg text-amber-950 dark:text-amber-100"
     >
       <p>{text}</p>
     </div>
