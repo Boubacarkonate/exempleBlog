@@ -60,6 +60,16 @@ const images: GalleryImage[] = [
     alt: "Plage tropicale turquoise",
     category: "Plages",
   },
+  {
+    src: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&auto=format&fit=crop&q=70",
+    alt: "Temples anciens au coucher du soleil",
+    category: "Culture",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&auto=format&fit=crop&q=70",
+    alt: "Skyline urbaine de nuit",
+    category: "Villes",
+  },
 ];
 
 const CATEGORIES: Category[] = ["Tous", "Plages", "Villes", "Nature", "Culture"];

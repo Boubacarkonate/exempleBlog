@@ -90,7 +90,7 @@ const Card = () => (
         />
 
         {/* Gradient permanent bas */}
-        <div className="absolute inset-0 bg-gradient-to-t from-amber-950/85 via-amber-950/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/10" />
 
         {/* Overlay hover */}
         <div className="absolute inset-0 bg-amber-950/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -113,7 +113,7 @@ const Card = () => (
 
         {/* Contenu bas */}
         <div className="absolute bottom-0 left-0 right-0 p-5">
-          <h3 className="text-xl font-bold text-white drop-shadow">
+          <h3 className="text-xl font-bold text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.8),0_1px_3px_rgba(0,0,0,0.9)]">
             {country.name.common}
           </h3>
 
