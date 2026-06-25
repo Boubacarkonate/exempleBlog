@@ -1,7 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
-import { blogPosts, type ContentBlock } from "../data/blogPosts";
+import { type ContentBlock } from "../data/blogPosts";
+import { useBlogPosts } from "../hooks/useBlogPosts";
 import PageTransition from "../components/PageTransition";
 import SEO from "../components/SEO";
 import ShareButtons from "../components/ShareButtons";
@@ -39,7 +40,8 @@ const renderBlock = (block: ContentBlock, index: number) => {
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t } = useTranslation();
-  const post = blogPosts.find((p) => p.slug === slug);
+  const posts = useBlogPosts();
+  const post = posts.find((p) => p.slug === slug);
 
   if (!post) {
     return (
@@ -52,8 +54,8 @@ const BlogPostPage = () => {
     );
   }
 
-  const headings = post.content.filter((b) => b.type === "heading");
-  const otherPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
+  const headings = post.content.filter((b: ContentBlock) => b.type === "heading");
+  const otherPosts = posts.filter((p) => p.slug !== slug).slice(0, 2);
 
   return (
     <PageTransition>
@@ -83,7 +85,7 @@ const BlogPostPage = () => {
               </Link>
 
               <div className="mt-6 text-base">
-                {post.content.map((block, i) => renderBlock(block, i))}
+                {post.content.map((block: ContentBlock, i: number) => renderBlock(block, i))}
               </div>
 
               <ShareButtons title={post.title} slug={post.slug} />

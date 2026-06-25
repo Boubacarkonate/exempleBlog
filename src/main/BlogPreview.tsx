@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
-import { blogPosts } from "../data/blogPosts";
+import { useTranslation } from "react-i18next";
+import { useBlogPosts } from "../hooks/useBlogPosts";
 
 const BlogPreview = () => {
-  const latest = blogPosts.slice(0, 2);
+  const { t } = useTranslation();
+  const posts = useBlogPosts();
+  const latest = posts.slice(0, 2);
 
   return (
     <div className="grid gap-6 sm:grid-cols-2">
@@ -38,7 +41,7 @@ const BlogPreview = () => {
               {post.excerpt}
             </p>
             <p className="mt-3 text-xs text-amber-500 dark:text-amber-400">
-              {post.date} · {post.readTime} min de lecture
+              {post.date} · {post.readTime} {t("blog.min_read")}
             </p>
           </div>
         </Link>

@@ -2,14 +2,15 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { FiGrid, FiList, FiSearch, FiX } from "react-icons/fi";
-import { blogPosts, type BlogPost } from "../data/blogPosts";
+import { blogPosts, type FlatBlogPost } from "../data/blogPosts";
+import { useBlogPosts } from "../hooks/useBlogPosts";
 import PageTransition from "../components/PageTransition";
 import SEO from "../components/SEO";
 import Skeleton from "../components/Skeleton";
 
 const allTags = [...new Set(blogPosts.flatMap((p) => p.tags))];
 
-const BlogCard = ({ post }: { post: BlogPost }) => {
+const BlogCard = ({ post }: { post: FlatBlogPost }) => {
   const [imgLoaded, setImgLoaded] = useState(false);
   const { t } = useTranslation();
 
@@ -44,7 +45,7 @@ const BlogCard = ({ post }: { post: BlogPost }) => {
   );
 };
 
-const BlogListCard = ({ post }: { post: BlogPost }) => {
+const BlogListCard = ({ post }: { post: FlatBlogPost }) => {
   const [imgLoaded, setImgLoaded] = useState(false);
   const { t } = useTranslation();
 
@@ -84,8 +85,9 @@ const BlogPage = () => {
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const { t } = useTranslation();
+  const posts = useBlogPosts();
 
-  const filtered = blogPosts.filter((p) => {
+  const filtered = posts.filter((p) => {
     const q = search.toLowerCase();
     const matchesSearch = !q || p.title.toLowerCase().includes(q) || p.excerpt.toLowerCase().includes(q) || p.tags.some((tag) => tag.toLowerCase().includes(q));
     const matchesTag = !activeTag || p.tags.includes(activeTag);
