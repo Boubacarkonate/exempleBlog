@@ -1,3 +1,5 @@
+import { FiUsers } from "react-icons/fi";
+
 interface Country {
   cca3: string;
   name: { common: string };
@@ -5,6 +7,7 @@ interface Country {
   population: number;
   flags: { png: string };
   fact: string;
+  photo: string;
 }
 
 const countries: Country[] = [
@@ -15,6 +18,8 @@ const countries: Country[] = [
     population: 10718565,
     flags: { png: "https://flagcdn.com/w320/gr.png" },
     fact: "La Grèce possède plus de 6 000 îles, dont 227 sont habitées.",
+    photo:
+      "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=700&auto=format&fit=crop&q=75",
   },
   {
     cca3: "JPN",
@@ -23,6 +28,8 @@ const countries: Country[] = [
     population: 125681593,
     flags: { png: "https://flagcdn.com/w320/jp.png" },
     fact: "Le Japon compte plus de 6 800 îles et 111 volcans actifs.",
+    photo:
+      "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=700&auto=format&fit=crop&q=75",
   },
   {
     cca3: "NOR",
@@ -31,6 +38,8 @@ const countries: Country[] = [
     population: 5379475,
     flags: { png: "https://flagcdn.com/w320/no.png" },
     fact: "La Norvège possède le plus long fjord du monde : le Sognefjord (204 km).",
+    photo:
+      "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=700&auto=format&fit=crop&q=75",
   },
   {
     cca3: "MAR",
@@ -39,6 +48,8 @@ const countries: Country[] = [
     population: 36910558,
     flags: { png: "https://flagcdn.com/w320/ma.png" },
     fact: "Fès el-Bali est la plus grande médina du monde classée à l'UNESCO.",
+    photo:
+      "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=700&auto=format&fit=crop&q=75",
   },
   {
     cca3: "ITA",
@@ -47,6 +58,8 @@ const countries: Country[] = [
     population: 59554023,
     flags: { png: "https://flagcdn.com/w320/it.png" },
     fact: "L'Italie abrite 58 sites classés au patrimoine mondial de l'UNESCO.",
+    photo:
+      "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=700&auto=format&fit=crop&q=75",
   },
   {
     cca3: "BRA",
@@ -55,44 +68,68 @@ const countries: Country[] = [
     population: 215313498,
     flags: { png: "https://flagcdn.com/w320/br.png" },
     fact: "La forêt amazonienne couvre 60 % du territoire brésilien.",
+    photo:
+      "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=700&auto=format&fit=crop&q=75",
   },
 ];
 
-const Card: React.FC = () => (
-  <div id="card">
-    <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
-      {countries.map((country) => (
-        <div
-          className="group mx-auto flex w-full max-w-xs flex-col gap-4 bg-amber-50 p-4 dark:bg-stone-900 [perspective:1000] sm:w-72 sm:max-w-none"
-          key={country.cca3}
-        >
-          <div className="relative h-64 w-full shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] sm:h-80">
-            <div className="absolute inset-0 flex items-center justify-center rounded-lg border border-amber-200 bg-amber-50 dark:border-stone-600 dark:bg-stone-800">
-              <img
-                src={country.flags.png}
-                alt={`Drapeau de ${country.name.common}`}
-                loading="lazy"
-                className="h-24 w-36 object-contain sm:h-36 sm:w-56"
-              />
-            </div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center rounded-lg bg-amber-200 px-6 py-8 text-center dark:bg-stone-700 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-              <h3 className="mb-2 text-lg font-bold text-amber-950 dark:text-amber-100">
-                {country.name.common}
-              </h3>
-              <p className="mb-2 text-amber-950 dark:text-amber-200">
-                {country.region}
-              </p>
-              <p className="mb-3 leading-tight text-amber-950 dark:text-amber-200">
-                Population : {country.population.toLocaleString("fr-FR")}
-              </p>
-              <p className="text-sm text-amber-950 dark:text-amber-200">
-                {country.fact}
-              </p>
-            </div>
+const Card = () => (
+  <div id="card" className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {countries.map((country) => (
+      <div
+        key={country.cca3}
+        className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-md transition-shadow duration-300 hover:shadow-xl"
+      >
+        {/* Photo de fond */}
+        <img
+          src={country.photo}
+          alt={country.name.common}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+
+        {/* Gradient permanent bas */}
+        <div className="absolute inset-0 bg-gradient-to-t from-amber-950/85 via-amber-950/25 to-transparent" />
+
+        {/* Overlay hover */}
+        <div className="absolute inset-0 bg-amber-950/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+        {/* Drapeau + région — haut gauche */}
+        <div className="absolute left-3 top-3 flex items-center gap-2">
+          <span className="rounded bg-white/15 px-2 py-0.5 text-xs font-semibold uppercase tracking-widest text-white/90 backdrop-blur-sm">
+            {country.region}
+          </span>
+        </div>
+
+        {/* Drapeau — haut droite */}
+        <div className="absolute right-3 top-3 overflow-hidden rounded shadow-lg ring-1 ring-white/20">
+          <img
+            src={country.flags.png}
+            alt={`Drapeau ${country.name.common}`}
+            className="h-5 w-8 object-cover"
+          />
+        </div>
+
+        {/* Contenu bas */}
+        <div className="absolute bottom-0 left-0 right-0 p-5">
+          <h3 className="text-xl font-bold text-white drop-shadow">
+            {country.name.common}
+          </h3>
+
+          {/* Infos supplémentaires au hover */}
+          <div className="mt-2 translate-y-3 space-y-1.5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            <p className="flex items-center gap-1.5 text-xs text-amber-200/80">
+              <FiUsers size={12} />
+              {country.population.toLocaleString("fr-FR")} habitants
+            </p>
+            <p className="text-sm leading-snug text-amber-50/90">
+              {country.fact}
+            </p>
           </div>
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
 );
 
