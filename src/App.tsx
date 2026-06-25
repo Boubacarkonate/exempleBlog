@@ -1,20 +1,19 @@
-import Footer from "./footer/Footer";
-import { Header } from "./hearder/Header";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import BlogPage from "./blog/BlogPage";
+import BlogPostPage from "./blog/BlogPostPage";
+import Layout from "./Layout";
 import Main from "./main/Main";
-import ScrollToTopButton from "./main/ScrollToTopButton";
 
-const App = () => {
-  return (
-    <div
-      id="home"
-      className="grid grid-cols-1 gap-32 bg-amber-50 font-quicksand md:overflow-x-hidden"
-    >
-      <Header />
-      <Main />
-      <Footer />
-      <ScrollToTopButton />
-    </div>
-  );
-};
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Main />} />
+        <Route path="blog" element={<BlogPage />} />
+        <Route path="blog/:slug" element={<BlogPostPage />} />
+      </Route>
+    </Routes>
+  </BrowserRouter>
+);
 
 export default App;

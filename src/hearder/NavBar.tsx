@@ -1,28 +1,17 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import LogoNav from "./LogoNav";
 
-interface NavBarComponent {
-  home: string;
-  about: string;
-  card: string;
-  contact: string;
-}
-
-const NavBar: React.FC<NavBarComponent> = ({ home, about, card, contact }) => {
+const NavBar = () => {
   const [opacity, setOpacity] = useState<number>(1);
 
-  const handleScroll = () => {
-    const scrollTop = window.scrollY;
-    const newOpacity = Math.max(0.8, 1 - scrollTop / 300);
-    setOpacity(newOpacity);
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      const newOpacity = Math.max(0.8, 1 - window.scrollY / 300);
+      setOpacity(newOpacity);
     };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -35,23 +24,28 @@ const NavBar: React.FC<NavBarComponent> = ({ home, about, card, contact }) => {
       </div>
       <ul className="flex w-full flex-wrap items-center justify-center gap-2 scroll-smooth bg-amber-200 p-4 text-lg uppercase text-amber-950 md:justify-center md:gap-10 md:space-x-10">
         <li className="whitespace-nowrap hover:scale-125 hover:underline">
-          <a href="#home" aria-label={`Navigate to ${home}`}>
-            {home}
+          <Link to="/" aria-label="Aller à l'accueil">
+            Home
+          </Link>
+        </li>
+        <li className="whitespace-nowrap hover:scale-125 hover:underline">
+          <a href="/#about" aria-label="Aller à la section À propos">
+            About
           </a>
         </li>
         <li className="whitespace-nowrap hover:scale-125 hover:underline">
-          <a href="#about" aria-label={`Navigate to ${about}`}>
-            {about}
+          <a href="/#card" aria-label="Aller à la section Photos">
+            Photos
           </a>
         </li>
         <li className="whitespace-nowrap hover:scale-125 hover:underline">
-          <a href="#card" aria-label={`Navigate to ${card}`}>
-            {card}
-          </a>
+          <Link to="/blog" aria-label="Aller au blog">
+            Blog
+          </Link>
         </li>
         <li className="whitespace-nowrap hover:scale-125 hover:underline">
-          <a href="#contact" aria-label={`Navigate to ${contact}`}>
-            {contact}
+          <a href="/#contact" aria-label="Aller à la section Contact">
+            Contact
           </a>
         </li>
       </ul>
