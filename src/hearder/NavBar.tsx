@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useDarkMode } from "../hooks/useDarkMode";
 import LogoNav from "./LogoNav";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const { isDark, toggle } = useDarkMode();
+  const location = useLocation();
+  const isTransparent = location.pathname === "/" && !scrolled;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -17,9 +19,9 @@ const NavBar = () => {
   return (
     <div
       className={`fixed inset-x-0 top-0 z-20 flex w-full flex-row transition-all duration-300 ${
-        scrolled
-          ? "border-b border-amber-200/50 bg-amber-50/85 shadow-sm backdrop-blur-md dark:border-stone-700/50 dark:bg-stone-900/85"
-          : "bg-transparent"
+        isTransparent
+          ? "bg-transparent"
+          : "border-b border-amber-200/50 bg-amber-50/85 shadow-sm backdrop-blur-md dark:border-stone-700/50 dark:bg-stone-900/85"
       }`}
     >
       <div>
@@ -27,9 +29,9 @@ const NavBar = () => {
       </div>
       <ul
         className={`flex w-full flex-wrap items-center justify-center gap-2 p-4 text-lg uppercase transition-colors duration-300 md:justify-center md:gap-10 md:space-x-10 ${
-          scrolled
-            ? "text-amber-950 dark:text-amber-100"
-            : "text-amber-50"
+          isTransparent
+            ? "text-amber-50"
+            : "text-amber-950 dark:text-amber-100"
         }`}
       >
         <li className="whitespace-nowrap hover:scale-125 hover:underline">
@@ -62,9 +64,9 @@ const NavBar = () => {
             onClick={toggle}
             aria-label={isDark ? "Passer en mode clair" : "Passer en mode sombre"}
             className={`flex h-8 w-8 items-center justify-center rounded-full transition-all hover:scale-110 ${
-              scrolled
-                ? "bg-amber-950/10 text-amber-950 hover:bg-amber-950/20 dark:bg-amber-100/10 dark:text-amber-100 dark:hover:bg-amber-100/20"
-                : "bg-white/15 text-amber-50 hover:bg-white/25"
+              isTransparent
+                ? "bg-white/15 text-amber-50 hover:bg-white/25"
+                : "bg-amber-950/10 text-amber-950 hover:bg-amber-950/20 dark:bg-amber-100/10 dark:text-amber-100 dark:hover:bg-amber-100/20"
             }`}
           >
             {isDark ? <FiSun size={18} /> : <FiMoon size={18} />}
