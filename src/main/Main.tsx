@@ -7,6 +7,7 @@ import BlogPreview from "./BlogPreview";
 import Card from "./Card";
 import Gallery from "./Gallery";
 import Hero from "./Hero";
+import NextDestination from "./NextDestination";
 
 const Main = () => (
   <div>
@@ -87,6 +88,11 @@ const Main = () => (
           />
           <Gallery />
         </section>
+      </FadeInUp>
+
+      {/* Prochaine destination */}
+      <FadeInUp delay={0.05}>
+        <NextDestination />
       </FadeInUp>
 
     </div>
