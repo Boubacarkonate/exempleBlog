@@ -19,7 +19,7 @@ const Main = () => (
 
     <Hero />
 
-    <div className="mx-4 grid gap-24 pb-8 sm:mx-10 md:mx-20 lg:mx-32 xl:mx-52">
+    <div className="mx-4 mt-16 grid gap-24 pb-8 sm:mx-10 md:mx-20 lg:mx-32 xl:mx-52">
 
       {/* À propos */}
       <FadeInUp>
