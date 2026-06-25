@@ -16,64 +16,65 @@ const NavBar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const linkClass = `transition-colors duration-200 hover:opacity-70 ${
+    isTransparent ? "text-amber-50" : "text-amber-950 dark:text-amber-100"
+  }`;
+
   return (
-    <div
-      className={`fixed inset-x-0 top-0 z-20 flex w-full flex-row transition-all duration-300 ${
+    <header
+      className={`fixed inset-x-0 top-0 z-20 flex items-center justify-between px-6 py-3 transition-all duration-300 ${
         isTransparent
           ? "bg-transparent"
-          : "border-b border-amber-200/50 bg-amber-50/85 shadow-sm backdrop-blur-md dark:border-stone-700/50 dark:bg-stone-900/85"
+          : "border-b border-amber-200/50 bg-amber-50/90 shadow-sm backdrop-blur-md dark:border-stone-700/50 dark:bg-stone-900/90"
       }`}
     >
-      <div>
-        <LogoNav logoName="logo" />
-      </div>
-      <ul
-        className={`flex w-full flex-wrap items-center justify-center gap-2 p-4 text-lg uppercase transition-colors duration-300 md:justify-center md:gap-10 md:space-x-10 ${
+      {/* Logo */}
+      <LogoNav />
+
+      {/* Liens de navigation */}
+      <nav>
+        <ul className="flex flex-wrap items-center gap-5 text-xs font-semibold uppercase tracking-widest">
+          <li>
+            <Link to="/" className={linkClass} aria-label="Accueil">
+              Home
+            </Link>
+          </li>
+          <li>
+            <a href="/#about" className={linkClass} aria-label="À propos">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="/#card" className={linkClass} aria-label="Destinations">
+              Photos
+            </a>
+          </li>
+          <li>
+            <Link to="/blog" className={linkClass} aria-label="Blog">
+              Blog
+            </Link>
+          </li>
+          <li>
+            <a href="/#contact" className={linkClass} aria-label="Contact">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      {/* Bouton dark mode */}
+      <button
+        onClick={toggle}
+        aria-label={isDark ? "Passer en mode clair" : "Passer en mode sombre"}
+        className={`flex h-8 w-8 items-center justify-center rounded-full transition-all hover:scale-110 ${
           isTransparent
-            ? "text-amber-50"
-            : "text-amber-950 dark:text-amber-100"
+            ? "bg-white/15 text-amber-50 hover:bg-white/25"
+            : "bg-amber-950/8 text-amber-950 hover:bg-amber-950/15 dark:bg-amber-100/10 dark:text-amber-100 dark:hover:bg-amber-100/20"
         }`}
       >
-        <li className="whitespace-nowrap hover:scale-125 hover:underline">
-          <Link to="/" aria-label="Aller à l'accueil">
-            Home
-          </Link>
-        </li>
-        <li className="whitespace-nowrap hover:scale-125 hover:underline">
-          <a href="/#about" aria-label="Aller à la section À propos">
-            About
-          </a>
-        </li>
-        <li className="whitespace-nowrap hover:scale-125 hover:underline">
-          <a href="/#card" aria-label="Aller à la section Photos">
-            Photos
-          </a>
-        </li>
-        <li className="whitespace-nowrap hover:scale-125 hover:underline">
-          <Link to="/blog" aria-label="Aller au blog">
-            Blog
-          </Link>
-        </li>
-        <li className="whitespace-nowrap hover:scale-125 hover:underline">
-          <a href="/#contact" aria-label="Aller à la section Contact">
-            Contact
-          </a>
-        </li>
-        <li>
-          <button
-            onClick={toggle}
-            aria-label={isDark ? "Passer en mode clair" : "Passer en mode sombre"}
-            className={`flex h-8 w-8 items-center justify-center rounded-full transition-all hover:scale-110 ${
-              isTransparent
-                ? "bg-white/15 text-amber-50 hover:bg-white/25"
-                : "bg-amber-950/10 text-amber-950 hover:bg-amber-950/20 dark:bg-amber-100/10 dark:text-amber-100 dark:hover:bg-amber-100/20"
-            }`}
-          >
-            {isDark ? <FiSun size={18} /> : <FiMoon size={18} />}
-          </button>
-        </li>
-      </ul>
-    </div>
+        {isDark ? <FiSun size={17} /> : <FiMoon size={17} />}
+      </button>
+    </header>
   );
 };
 
