@@ -6,6 +6,8 @@ import { useBlogPosts } from "../hooks/useBlogPosts";
 import PageTransition from "../components/PageTransition";
 import SEO from "../components/SEO";
 import ShareButtons from "../components/ShareButtons";
+import LikeButton from "../components/LikeButton";
+import Comments from "../components/Comments";
 import ReadingProgress from "./ReadingProgress";
 
 const slugify = (text: string) =>
@@ -89,6 +91,12 @@ const BlogPostPage = () => {
               </div>
 
               <ShareButtons title={post.title} slug={post.slug} />
+
+              <div className="mt-10 flex justify-center">
+                <LikeButton slug={post.slug} />
+              </div>
+
+              <Comments slug={post.slug} />
 
               {otherPosts.length > 0 && (
                 <div className="mt-16 border-t border-amber-200 pt-10 dark:border-stone-700">

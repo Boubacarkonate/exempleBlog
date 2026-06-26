@@ -125,6 +125,23 @@
     "copied": "Copied!",
     "copyright": "© {{year}} The Travel Blog — All rights reserved"
   },
+  "likes": {
+    "label": "likes",
+    "thanks": "Thank you for your support!"
+  },
+  "comments": {
+    "title": "Comments",
+    "name": "Your name",
+    "name_placeholder": "John Doe",
+    "message": "Your message",
+    "message_placeholder": "Share your thoughts on this article…",
+    "submit": "Post",
+    "sending": "Posting…",
+    "success": "Comment posted!",
+    "error": "Something went wrong. Please try again.",
+    "empty": "No comments yet.",
+    "be_first": "Be the first to react!"
+  },
   "notfound": {
     "error": "Error 404",
     "title": "Destination not found",

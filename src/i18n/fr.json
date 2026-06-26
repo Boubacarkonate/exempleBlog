@@ -125,6 +125,23 @@
     "copied": "Copié !",
     "copyright": "© {{year}} The Travel Blog — Tous droits réservés"
   },
+  "likes": {
+    "label": "j'aime",
+    "thanks": "Merci pour votre soutien !"
+  },
+  "comments": {
+    "title": "Commentaires",
+    "name": "Votre nom",
+    "name_placeholder": "Jean Dupont",
+    "message": "Votre message",
+    "message_placeholder": "Partagez votre ressenti sur cet article…",
+    "submit": "Publier",
+    "sending": "Envoi…",
+    "success": "Commentaire publié !",
+    "error": "Une erreur est survenue. Réessayez.",
+    "empty": "Aucun commentaire pour l'instant.",
+    "be_first": "Soyez le premier à réagir !"
+  },
   "notfound": {
     "error": "Erreur 404",
     "title": "Destination introuvable",

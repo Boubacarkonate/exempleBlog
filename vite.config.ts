@@ -3,11 +3,15 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
+  build: {
+    minify: "esbuild",
+  },
   plugins: [
     react(),
     VitePWA({
       registerType: "autoUpdate",
       includeAssets: ["logo.png"],
+      workbox: { disableDevLogs: true },
       manifest: {
         name: "The Travel Blog",
         short_name: "Travel Blog",
